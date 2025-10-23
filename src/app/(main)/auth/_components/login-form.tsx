@@ -11,8 +11,8 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "
 import { Input } from "@/components/ui/input";
 
 const FormSchema = z.object({
-  email: z.string().email({ message: "Please enter a valid email address." }),
-  password: z.string().min(6, { message: "Password must be at least 6 characters." }),
+  email: z.string().email({ message: "Ingrese un correo electrónico válido." }),
+  password: z.string().min(6, { message: "La contraseña debe tener al menos 6 caracteres." }),
   remember: z.boolean().optional(),
 });
 
@@ -44,7 +44,7 @@ export function LoginForm() {
           name="email"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Email Address</FormLabel>
+              <FormLabel>Correo electronico</FormLabel>
               <FormControl>
                 <Input id="email" type="email" placeholder="you@example.com" autoComplete="email" {...field} />
               </FormControl>
@@ -57,7 +57,7 @@ export function LoginForm() {
           name="password"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Password</FormLabel>
+              <FormLabel>Contraseña</FormLabel>
               <FormControl>
                 <Input
                   id="password"
@@ -71,27 +71,8 @@ export function LoginForm() {
             </FormItem>
           )}
         />
-        <FormField
-          control={form.control}
-          name="remember"
-          render={({ field }) => (
-            <FormItem className="flex flex-row items-center">
-              <FormControl>
-                <Checkbox
-                  id="login-remember"
-                  checked={field.value}
-                  onCheckedChange={field.onChange}
-                  className="size-4"
-                />
-              </FormControl>
-              <FormLabel htmlFor="login-remember" className="text-muted-foreground ml-1 text-sm font-medium">
-                Remember me for 30 days
-              </FormLabel>
-            </FormItem>
-          )}
-        />
         <Button className="w-full" type="submit">
-          Login
+          Iniciar sesión
         </Button>
       </form>
     </Form>
