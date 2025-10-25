@@ -21,8 +21,7 @@ export function LoginForm() {
     resolver: zodResolver(FormSchema),
     defaultValues: {
       email: "",
-      password: "",
-      remember: false,
+      password: ""
     },
   });
 
@@ -35,7 +34,6 @@ export function LoginForm() {
       ),
     });
   };
-
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">

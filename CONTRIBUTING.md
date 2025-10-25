@@ -17,6 +17,7 @@ The goal is to keep the codebase modular, scalable, and easy to extend.
 We use a **colocation-based file system**. Each feature keeps its own pages, components, and logic.
 
 ```
+
 src
 ├── app               # Next.js routes (App Router)
 │   ├── (auth)        # Auth layouts & screens
